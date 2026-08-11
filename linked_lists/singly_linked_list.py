@@ -37,3 +37,21 @@ class Singly_Linked_List:
         else:
             self.head = new_node
         self.display_list()
+    def insert_middle(self, position, value):
+            length = self.list_length()
+            if position < 0 or position > length:
+                print("Invalid input given, Try again!")
+            elif position == 0:
+                self.insert_beginning(value)
+            elif position == length:
+                self.insert_end(value)
+            else:
+                new_node = Node(value)
+                p = self.head
+                q = None
+                for i in range(position):
+                    q = p
+                    p = p.next
+                q.next = new_node
+                new_node.next = p
+                self.display_list()
