@@ -27,10 +27,13 @@ class Singly_Linked_List:
             new_node.next = self.head
         self.head = new_node
         self.display_list()
-if __name__ == "__main__":
-    sll = Singly_Linked_List()
-    sll.insert_beginning(30)
-    sll.insert_beginning(20)
-    sll.insert_beginning(10)
-    sll.display_list()
-    print(sll.list_length())
+    def insert_end(self, value):
+        new_node = Node(value)
+        if self.head:
+            current_node = self.head
+            while current_node.next:
+                current_node = current_node.next
+            current_node.next = new_node
+        else:
+            self.head = new_node
+        self.display_list()
