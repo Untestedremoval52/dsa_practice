@@ -21,10 +21,16 @@ class Singly_Linked_List:
                 print(current_node.data, end=" ")
                 current_node = current_node.next
             print()
+    def insert_beginning(self, value):
+        new_node = Node(value)
+        if self.head:
+            new_node.next = self.head
+        self.head = new_node
+        self.display_list()
 if __name__ == "__main__":
     sll = Singly_Linked_List()
-    sll.head = Node(10)
-    sll.head.next = Node(20)
-    sll.head.next.next = Node(30)
+    sll.insert_beginning(30)
+    sll.insert_beginning(20)
+    sll.insert_beginning(10)
     sll.display_list()
     print(sll.list_length())
