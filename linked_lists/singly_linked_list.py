@@ -55,3 +55,16 @@ class Singly_Linked_List:
                 q.next = new_node
                 new_node.next = p
                 self.display_list()
+    def search_element(self, value):
+        if self.head == None:
+            print("The given list is empty, please try again!")
+        else:
+            position = 0
+            current_node = self.head
+            while current_node:
+                if current_node.data == value:
+                    print(f"Element {value} found at position {position}")
+                    return
+                current_node = current_node.next
+                position += 1
+                print(f"Element {value} not found in the list")
