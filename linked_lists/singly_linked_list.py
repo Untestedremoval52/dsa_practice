@@ -74,4 +74,24 @@ class Singly_Linked_List:
             self.head = current_node.next
             current_node.next = None
         else:
-            print("The list is empty, please try again!")
+            print("The element cannot be deleted as the list is empty, please try again!")
+    def delete_end(self):
+        while self.head:
+            q = None
+            p = self.head
+            while p.next:
+                q = p
+                p = p.next
+            if p == self.head:
+                self.head = None
+            else:
+                q.next = None
+            self.display_list()
+        else:
+            print("The element cannot be deleted as the list is empty, please try again!")
+sll = Singly_Linked_List()
+sll.insert_end(10)
+sll.insert_end(20)
+sll.insert_end(30)
+sll.delete_end()
+sll.display_list()
