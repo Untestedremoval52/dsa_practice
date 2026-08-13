@@ -89,9 +89,20 @@ class Singly_Linked_List:
             self.display_list()
         else:
             print("The element cannot be deleted as the list is empty, please try again!")
-sll = Singly_Linked_List()
-sll.insert_end(10)
-sll.insert_end(20)
-sll.insert_end(30)
-sll.delete_end()
-sll.display_list()
+    def delete_middle(self, position):
+        length = self.list_length()
+        if length == 0:
+            print("The element cannot be deleted as the list is empty, please try again!")
+        elif position < 0 or position >= length:
+            print("Invalid input given, Try again!")
+        elif position == 0:
+            self.delete_beginning()
+        else:
+            p = self.head
+            q = None
+            for i in range (position):
+                q = p
+                p = p.next
+            q.next = p.next
+            p.next = None
+            self.display_list()
