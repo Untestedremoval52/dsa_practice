@@ -68,3 +68,10 @@ class Singly_Linked_List:
                 current_node = current_node.next
                 position += 1
                 print(f"Element {value} not found in the list")
+    def delete_beginning(self):
+        if self.head != None:
+            current_node = self.head
+            self.head = current_node.next
+            current_node.next = None
+        else:
+            print("The list is empty, please try again!")
