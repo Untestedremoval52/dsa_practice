@@ -66,10 +66,18 @@ class Circular_Singly_Linked_List:
             current_node.next = node
             self.length += 1
         self.display_list()
-cll = Circular_Singly_Linked_List()
-cll.insert_end(10)
-cll.insert_end(20)
-cll.insert_end(30)
-print(cll.length)
-cll.insert_middle(5, 0)
-print(cll.length)
+    def search_element(self, key):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        position = 0
+        current_node = self.head
+        while True:
+            if current_node.data == key:
+                print(f"{key} was found at position {position}")
+                return
+            position += 1
+            current_node = current_node.next
+            if current_node == self.head:
+                break
+        print(f"{key} was not found in the given list")
