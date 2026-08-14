@@ -110,3 +110,23 @@ class Circular_Singly_Linked_List:
             p.next = None
         self.length -= 1
         self.display_list()
+    def delete_middle(self, position):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        if position < 0 or position >= self.length:
+            print("Invalid input given, Try again!")
+        elif position == 0:
+            self.delete_beginning()
+        elif position == self.length - 1:
+            self.delete_end()
+        else:
+            p = self.head
+            q = None
+            for _ in range (position):
+                q = p
+                p = p.next
+            q.next = p.next
+            p.next = None
+            self.length -= 1
+        self.display_list()
