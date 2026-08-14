@@ -33,8 +33,20 @@ class Circular_Singly_Linked_List:
             self.head = node
         self.length +=1
         self.display_list()
-sll = Circular_Singly_Linked_List()
-sll.insert_beginning(30)
-sll.insert_beginning(20)
-sll.insert_beginning(10)
-sll.insert_beginning(5)
+    def insert_end(self, value):
+        node = Node(value)
+        if self.is_empty() == True:
+            self.head = node
+            node.next = self.head
+        else:
+            current_node = self.head
+            while current_node.next != self.head:
+                current_node = current_node.next
+            current_node.next = node
+            node.next = self.head
+        self.length += 1
+        self.display_list()
+cll = Circular_Singly_Linked_List()
+cll.insert_end(10)
+cll.insert_end(20)
+cll.insert_end(30)
