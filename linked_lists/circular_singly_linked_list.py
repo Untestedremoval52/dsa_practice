@@ -94,3 +94,19 @@ class Circular_Singly_Linked_List:
             self.head = self.head.next
             current_node.next = self.head
             self.length = self.length - 1
+    def delete_end(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        if self.length == 1:
+            self.head = None
+        else:
+            p = self.head
+            q = None
+            while p.next != self.head:
+                q = p
+                p = p.next
+            q.next = self.head
+            p.next = None
+        self.length -= 1
+        self.display_list()
