@@ -46,7 +46,30 @@ class Circular_Singly_Linked_List:
             node.next = self.head
         self.length += 1
         self.display_list()
+    def insert_middle(self, value, position):
+        node = Node(value)
+        if self.is_empty() == True:
+            self.head = node
+            node.next = self.head
+            self.length += 1
+        elif position < 0 or position > self.length:
+            print("Invalid input given, please try again later!")
+        elif position == 0:
+            self.insert_beginning(value)
+        elif position == self.length:
+            self.insert_end(value)
+        else:
+            current_node = self.head
+            for i in range (position - 1):
+                current_node = current_node.next
+            node.next = current_node.next
+            current_node.next = node
+            self.length += 1
+        self.display_list()
 cll = Circular_Singly_Linked_List()
 cll.insert_end(10)
 cll.insert_end(20)
 cll.insert_end(30)
+print(cll.length)
+cll.insert_middle(5, 0)
+print(cll.length)
