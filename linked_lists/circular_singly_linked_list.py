@@ -81,3 +81,16 @@ class Circular_Singly_Linked_List:
             if current_node == self.head:
                 break
         print(f"{key} was not found in the given list")
+    def delete_beginning(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        if self.length == 1:
+            self.head = None
+        else:
+            current_node = self.head
+            while current_node.next != self.head:
+                current_node = current_node.next
+            self.head = self.head.next
+            current_node.next = self.head
+            self.length = self.length - 1
