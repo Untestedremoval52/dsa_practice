@@ -71,3 +71,16 @@ class DoublyLinkedList:
             p.prev = node
             self.length += 1
             self.display_forward()
+    def search_element(self, key):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        position = 0
+        current_node = self.head
+        while current_node:
+            if current_node.data == key:
+                print(f"{key} was found at {position} location")
+                return
+            position += 1
+            current_node = current_node.next
+        print(f"{key} not found in the list")
