@@ -37,3 +37,14 @@ class DoublyLinkedList:
             self.head = node
         self.length += 1
         self.display_forward()
+    def insert_end(self, value):
+        node = Node(value)
+        if self.is_empty() == True:
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.next = node
+            node.prev = self.tail
+            self.tail = node
+        self.length += 1
+        self.display_forward()
