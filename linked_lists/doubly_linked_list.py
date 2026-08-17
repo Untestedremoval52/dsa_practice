@@ -26,3 +26,14 @@ class DoublyLinkedList:
             while current_node:
                 print(current_node.data, end = " <---> " if current_node.prev else "\n")
                 current_node = current_node.prev
+    def insert_beginning(self, value):
+        node = Node(value)
+        if self.is_empty() == True:
+            self.head = node
+            self.tail = node
+        else:
+            node.next = self.head
+            self.head.prev = node
+            self.head = node
+        self.length += 1
+        self.display_forward()
