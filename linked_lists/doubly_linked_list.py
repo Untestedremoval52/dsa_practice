@@ -98,3 +98,29 @@ class DoublyLinkedList:
                 current_node.next = None
             self.length -= 1
         self.display_forward()
+    def delete_end(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+        else:
+            if self.length == 1:
+                self.head = None
+                self.tail = None
+            elif self.length > 1:
+                current_node = self.tail
+                self.tail = self.tail.prev
+                self.tail.next = None
+                current_node.prev = None
+            self.length -= 1
+        self.display_forward()
+dll = DoublyLinkedList()
+dll.delete_end()
+dll.insert_end(10)
+dll.delete_end()
+print(dll.length)
+dll.insert_end(10)
+dll.insert_end(20)
+dll.insert_end(30)
+dll.delete_end()
+dll.display_forward()
+dll.display_backward()
+print(dll.length)
