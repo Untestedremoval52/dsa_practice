@@ -84,3 +84,17 @@ class DoublyLinkedList:
             position += 1
             current_node = current_node.next
         print(f"{key} not found in the list")
+    def delete_beginning(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+        else:
+            if self.length == 1:
+                self.head = None
+                self.tail = None
+            elif self.length > 1:
+                current_node = self.head
+                self.head = self.head.next
+                self.head.prev = None
+                current_node.next = None
+            self.length -= 1
+        self.display_forward()
