@@ -112,15 +112,26 @@ class DoublyLinkedList:
                 current_node.prev = None
             self.length -= 1
         self.display_forward()
-dll = DoublyLinkedList()
-dll.delete_end()
-dll.insert_end(10)
-dll.delete_end()
-print(dll.length)
-dll.insert_end(10)
-dll.insert_end(20)
-dll.insert_end(30)
-dll.delete_end()
-dll.display_forward()
-dll.display_backward()
-print(dll.length)
+    def delete_middle(self, position):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+        else:
+            if position < 0 or position >= self.length:
+                print("Invalid input given, please try again!")
+                return
+            elif position == 0:
+                self.delete_beginning()
+            elif position == self.length - 1:
+                self.delete_end()
+            else:
+                p = self.head
+                q = None
+                for _ in range(position):
+                    p = p.next
+                q = p.prev
+                q.next = p.next
+                p.next.prev = q
+                p.next = None
+                p.prev = None
+                self.length -= 1
+        self.display_forward()
