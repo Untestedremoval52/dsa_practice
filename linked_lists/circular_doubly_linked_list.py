@@ -131,3 +131,24 @@ class CircularDoublyLinkedList:
                 self.tail.next = self.head
         self.length -= 1
         self.display_forward()
+    def delete_middle(self, position):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        elif position < 0 or position >= self.length:
+            print("Invalid input given, please try again!")
+        elif position == 0:
+            self.delete_beginning()
+        elif position == self.length - 1:
+            self.delete_end()
+        else:
+            p = self.head
+            for _ in range (position):
+                p = p.next
+            q = p.prev
+            q.next = p.next
+            p.next.prev = q
+            p.next = None
+            p.prev = None
+            self.length -= 1
+        self.display_forward()
