@@ -47,3 +47,18 @@ class CircularDoublyLinkedList:
             self.head = node
         self.length += 1
         self.display_forward()
+    def insert_end(self, value):
+        node = Node(value)
+        if self.is_empty() == True:
+            self.head = node
+            self.tail = node
+            node.next = node
+            node.prev = node
+        else:
+            node.next = self.head
+            self.head.prev = node
+            node.prev = self.tail
+            self.tail.next = node
+            self.tail = node
+        self.length += 1
+        self.display_forward()
