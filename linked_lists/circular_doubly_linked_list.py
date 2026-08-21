@@ -117,3 +117,17 @@ class CircularDoublyLinkedList:
                 self.tail.next = self.head
         self.length -= 1
         self.display_forward()
+    def delete_end(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        else:
+            if self.length == 1:
+                self.head = None
+                self.tail = None
+            elif self.length > 1:
+                self.tail = self.tail.prev
+                self.head.prev = self.tail
+                self.tail.next = self.head
+        self.length -= 1
+        self.display_forward()
