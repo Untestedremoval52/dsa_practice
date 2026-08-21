@@ -87,3 +87,19 @@ class CircularDoublyLinkedList:
             node.prev = q
             self.length += 1
         self.display_forward()
+    def search_element(self, value):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        current_node = self.head
+        position = 0
+        while True:
+            if current_node.data == value:
+                print(f"{value} has been found at {position} position")
+                return
+            else:
+                current_node = current_node.next
+                position += 1
+                if current_node == self.head:
+                    print(f"{value} has not been found in the given list")
+                    break
