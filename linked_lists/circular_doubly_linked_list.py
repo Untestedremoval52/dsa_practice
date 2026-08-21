@@ -103,3 +103,17 @@ class CircularDoublyLinkedList:
                 if current_node == self.head:
                     print(f"{value} has not been found in the given list")
                     break
+    def delete_beginning(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        else:
+            if self.length == 1:
+                self.head = None
+                self.tail = None
+            elif self.length > 1:
+                self.head = self.head.next
+                self.head.prev = self.tail
+                self.tail.next = self.head
+        self.length -= 1
+        self.display_forward()
