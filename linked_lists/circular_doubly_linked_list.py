@@ -32,3 +32,18 @@ class CircularDoublyLinkedList:
             if current_node == self.tail:
                 break
         print()
+    def insert_beginning(self, value):
+        node = Node(value)
+        if self.is_empty() == True:
+            self.head = node
+            self.tail = node
+            node.next = node
+            node.prev = node
+        else:
+            node.next = self.head
+            node.prev = self.tail
+            self.head.prev = node
+            self.tail.next = node
+            self.head = node
+        self.length += 1
+        self.display_forward()
