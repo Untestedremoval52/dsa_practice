@@ -62,3 +62,28 @@ class CircularDoublyLinkedList:
             self.tail = node
         self.length += 1
         self.display_forward()
+    def insert_middle(self, value, position):
+        node = Node(value)
+        if self.is_empty() == True:
+            self.head = node
+            self.tail = node
+            node.prev = node
+            node.next = node
+            self.length += 1
+        elif position < 0 or position > self.length:
+            print("Invalid input given, please try again!")
+        elif position == 0:
+            self.insert_beginning(value)
+        elif position == self.length:
+            self.insert_end(value)
+        else:
+            p = self.head
+            for _ in range(position):
+                p = p.next
+            q = p.prev
+            q.next = node
+            node.next = p
+            p.prev = node
+            node.prev = q
+            self.length += 1
+        self.display_forward()
