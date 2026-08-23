@@ -41,11 +41,20 @@ class Singly_Linked_List:
             total += current_node.data
             current_node = current_node.next
         print(f"The sum of all nodes in a given linked list is: {total}")
-sll = Singly_Linked_List()
-sll.insert_beginning(10)
-sll.insert_beginning(20)
-sll.insert_beginning(30)
-sll.sum_of_nodes()
+    def max_min_element(self):
+        if self.head == None:
+            print("Maximum annd Minimum values can't be evaluated as list is empty, please try again!")
+            return
+        max = self.head.data
+        min = self.head.data
+        current_node = self.head.next
+        while current_node:
+            if current_node.data > max:
+                max = current_node.data
+            elif current_node.data < min:
+                min = current_node.data
+            current_node = current_node.next
+        print(f"The Maximum in a given linked list is: {max} and the Minimum in a given linked list is: {min}")
 class Circular_Singly_Linked_List:
     def __init__(self):
         self.head = None
