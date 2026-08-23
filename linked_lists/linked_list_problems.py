@@ -34,6 +34,18 @@ class Singly_Linked_List:
         for _ in range(length // 2):
             current_node = current_node.next
         print(f"The middle element is {current_node.data}")
+    def sum_of_nodes(self):
+        current_node = self.head
+        total = 0
+        while current_node:
+            total += current_node.data
+            current_node = current_node.next
+        print(f"The sum of all nodes in a given linked list is: {total}")
+sll = Singly_Linked_List()
+sll.insert_beginning(10)
+sll.insert_beginning(20)
+sll.insert_beginning(30)
+sll.sum_of_nodes()
 class Circular_Singly_Linked_List:
     def __init__(self):
         self.head = None
@@ -77,10 +89,3 @@ class Circular_Singly_Linked_List:
             if current_node == self.head:
                 break
         print(f"The total number of nodes are: {count}")
-cdll = Circular_Singly_Linked_List()
-cdll.count_nodes()
-cdll.insert_beginning(10)
-cdll.count_nodes()
-cdll.insert_beginning(20)
-cdll.insert_beginning(30)
-cdll.count_nodes()
