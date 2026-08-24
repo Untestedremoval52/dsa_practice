@@ -43,6 +43,19 @@ Coding problems based on DSA for AI with one file per problem with patterns and 
 | Delete at position | O(n) | O(n) | O(n) | O(n) |
 | Space per node | O(1) | O(1) | O(1) | O(1) |
 
+### Stacks
+
+| Operation | Complexity |
+|---|---|
+| Push | O(1) |
+| Pop | O(1) |
+| Peek | O(1) |
+| isEmpty | O(1) |
+| Space per Node | O(n) |
+
 1. The doubly-linked variants get O(1) at both ends because prev and tail pointers remove the traversal adding an extra pointer per node of the linked list.
 2. Circular singly linked list is the worst among both: O(n) at the beginning and the end, it is because there's no None value to stop and no prev pointer to step back.
 3. The maintained counters and the tail references aren't free in a second way meaning they're the invariants which every method has to update, and getting it wrong produces silently wrong answers rather than crashes.
+
+---
+
