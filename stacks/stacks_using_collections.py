@@ -1,0 +1,35 @@
+from collections import deque
+class Stack:
+    def __init__(self):
+        self.stack = deque()
+    def get_length(self):
+            return len(self.stack)
+    def is_empty(self):
+        return True if self.get_length() == 0 else False
+    def display_stack(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return
+        else:
+            for element in reversed(self.stack):
+                print(element)
+    def push(self, data):
+        self.stack.append(data)
+        self.display_stack()
+    def pop(self):
+        if self.is_empty() == True:
+            print("The list is empty, please try again!")
+            return None
+        return self.stack.pop()
+    def peek(self):
+        if self.is_empty() == True:
+            return None
+        return self.stack[-1]
+if __name__ == "__main__":
+    s = Stack()
+    s.push(10)
+    s.push(20)
+    s.push(30)
+    print(s.pop())
+    print(s.peek())
+    print(s.get_length())
