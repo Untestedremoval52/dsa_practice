@@ -19,6 +19,8 @@ Coding problems based on DSA for AI with one file per problem with patterns and 
 | Merging | O(n + m) | O(n + m) |
 | Splitting | O(n) | O(n) |
 
+---
+
 ### Strings
 
 | Operation | Complexity |
@@ -29,6 +31,8 @@ Coding problems based on DSA for AI with one file per problem with patterns and 
 | Slicing | O(k) |
 | Substring Search | O(n * m) |
 | Joining/Merging | O(length) |
+
+---
 
 ### Linked Lists
 
@@ -42,6 +46,8 @@ Coding problems based on DSA for AI with one file per problem with patterns and 
 | Delete at end | O(n) | O(n) | O(1) | O(1) |
 | Delete at position | O(n) | O(n) | O(n) | O(n) |
 | Space per node | O(1) | O(1) | O(1) | O(1) |
+
+---
 
 ### Stacks
 
