@@ -59,6 +59,17 @@ Coding problems based on DSA for AI with one file per problem with patterns and 
 | isEmpty | O(1) |
 | Space per Node | O(n) |
 
+---
+
+### Queues
+
+| Operation | Complexity |
+|---|---|
+| Enqueue | O(1) |
+| Dequeue | O(1) |
+| Frontpeek/Rearpeek | O(1) |
+| Space per Node | O(n) |
+
 1. The doubly-linked variants get O(1) at both ends because prev and tail pointers remove the traversal adding an extra pointer per node of the linked list.
 2. Circular singly linked list is the worst among both: O(n) at the beginning and the end, it is because there's no None value to stop and no prev pointer to step back.
 3. The maintained counters and the tail references aren't free in a second way meaning they're the invariants which every method has to update, and getting it wrong produces silently wrong answers rather than crashes.
