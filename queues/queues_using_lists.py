@@ -28,10 +28,3 @@ class QueuesUsingLists:
             print("The list is empty, please try again!")
             return
         return self.queue[-1]
-qul = QueuesUsingLists()
-qul.enqueue(10)
-qul.enqueue(20)
-qul.enqueue(30)
-qul.dequeue()
-qul.dequeue()
-qul.frontpeek()
