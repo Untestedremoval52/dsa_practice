@@ -80,6 +80,19 @@ Coding problems based on DSA for AI with one file per problem with patterns and 
 | Exponential Search | O(n) |
 | Binary Search | O(n) |
 
+---
+
+### Sorting Techniques
+
+| Operation | Complexity |
+|---|---|
+| Bubble Sort | O(n^2) |
+| Selection Sort | O(n^2) |
+| Insertion Sort | O(n^2) |
+| Merge Sort | O(n log n) |
+| Quick Sort | O(n log n) |
+| Counting Sort | O(n + k) |
+
 1. The doubly-linked variants get O(1) at both ends because prev and tail pointers remove the traversal adding an extra pointer per node of the linked list.
 2. Circular singly linked list is the worst among both: O(n) at the beginning and the end, it is because there's no None value to stop and no prev pointer to step back.
 3. The maintained counters and the tail references aren't free in a second way meaning they're the invariants which every method has to update, and getting it wrong produces silently wrong answers rather than crashes.
