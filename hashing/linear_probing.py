@@ -12,6 +12,8 @@ class LinearProbingHashing:
             index = (h + i) % self.size
             if self.table[index] == None:
                 self.table[index] = key
+                print(f"Key : {key}, Index: {index}")
+                self.display()
                 return True
         raise Exception("Hash Table is full!")
     def search(self, key):
