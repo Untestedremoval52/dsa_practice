@@ -94,8 +94,22 @@ Coding problems based on DSA for AI with one file per problem with patterns and 
 | Quick Sort     | O(n log n) |
 | Counting Sort  | O(n + k)   |
 
+---
+
+### Hashing Operations
+
+| Operation | Complexity for average time (theta) | Complexity for worst case |
+|---|---|---|
+| Insertion | O(1) | O(n) |
+| Searching | O(1) | O(n) |
+| Deletion | O(1) | O(n) |
+| Updation | O(1) | O(n) |
+| Membership | O(1) | O(n) |
+| Iteration | O(1) | O(n) |
+
 1. The doubly-linked variants get O(1) at both ends because prev and tail pointers remove the traversal adding an extra pointer per node of the linked list.
 2. Circular singly linked list is the worst among both: O(n) at the beginning and the end, it is because there's no None value to stop and no prev pointer to step back.
 3. The maintained counters and the tail references aren't free in a second way meaning they're the invariants which every method has to update, and getting it wrong produces silently wrong answers rather than crashes.
+4. We can implement hashing operations using both sets and dictionaries, the only difference remains is that using sets, the updation operation can't be performed meanwhile using dictionaries, every operation can be implemented.
 
 ---
